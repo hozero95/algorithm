@@ -7,6 +7,13 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+/**
+ * Programmers
+ * 코딩테스트 연습 > 2021 Dev-Matching: 웹 백엔드 코딩테스트 > 로또의 최고 순위와 최저 순위
+ * @author Zero
+ * @since  2021-12-29
+ */
+
 @RunWith(DataProviderRunner.class)
 public class Main {
     @DataProvider
