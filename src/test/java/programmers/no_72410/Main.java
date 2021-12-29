@@ -7,15 +7,12 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.util.Locale;
-import java.util.stream.Stream;
-
 /**
  * Programmers
  * 코딩테스트 연습 > 2021 KAKAO BLIND RECRUITMENT > 신규 아이디 추천
  *
  * @author Zero
- * @since 2021-12-29
+ * @since  2021-12-29
  */
 
 @RunWith(DataProviderRunner.class)
