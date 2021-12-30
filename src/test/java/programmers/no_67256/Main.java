@@ -15,7 +15,7 @@ import java.util.Map;
  * 코딩테스트 연습 > 2020 카카오 인턴십 > 키패드 누르기
  *
  * @author Zero
- * @since  2021-12-30
+ * @since 2021-12-30
  */
 
 @RunWith(DataProviderRunner.class)
@@ -88,7 +88,7 @@ class Solution {
         return sb.toString();
     }
 
-    public void init() {
+    private void init() {
         sb = new StringBuilder();
         key = new HashMap<>();
         key.put(1, new Position(0, 0));
@@ -106,7 +106,7 @@ class Solution {
         rPos = new Position(3, 2);
     }
 
-    public void moveHand(String hand, int x, int y) {
+    private void moveHand(String hand, int x, int y) {
         sb.append(hand);
         if (hand.equals("L")) {
             lPos.setX(x);
