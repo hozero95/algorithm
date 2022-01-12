@@ -1,4 +1,4 @@
-package programmers.no_77484;
+package programmers.no_81301.no_77484;
 
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
