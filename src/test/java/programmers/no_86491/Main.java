@@ -20,7 +20,18 @@ public class Main {
     @DataProvider
     public static Object[][] resultData() {
         return new Object[][]{
-
+                {
+                        new int[][]{{60, 50}, {30, 70}, {60, 30}, {80, 40}},
+                        4000
+                },
+                {
+                        new int[][]{{10, 7}, {12, 3}, {8, 15}, {14, 7}, {5, 15}},
+                        120
+                },
+                {
+                        new int[][]{{14, 4}, {19, 6}, {6, 16}, {18, 7}, {7, 11}},
+                        133
+                }
         };
     }
 
@@ -36,6 +47,17 @@ public class Main {
 
 class Solution {
     public int solution(int[][] sizes) {
-        return 0;
+        int max = 0;
+        int min = 0;
+
+        for (int[] size : sizes) {
+            int bigNum = Math.max(size[0], size[1]);
+            int smallNum = Math.min(size[0], size[1]);
+
+            max = max < bigNum ? bigNum : max;
+            min = min < smallNum ? smallNum : min;
+        }
+
+        return max * min;
     }
 }
