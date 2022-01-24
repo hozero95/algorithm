@@ -64,7 +64,48 @@ public class Main {
 
 class Solution {
     public int solution(String dartResult) {
+        int result = 0;
+        String num = "";
+        int[] score = new int[3];
+        int index = -1;
 
-        return 0;
+        for (int i = 0; i < dartResult.length(); i++) {
+            String str = String.valueOf(dartResult.charAt(i));
+            if (str.matches("^[0-9]*$")) {
+                if (num.equals("")) {
+                    index++;
+                }
+                num += str;
+                score[index] = Integer.parseInt(num);
+            } else {
+                num = "";
+                switch (str.toUpperCase()) {
+                    case "S":
+                        score[index] = score[index];
+                        break;
+                    case "D":
+                        score[index] = (int) Math.pow(score[index], 2);
+                        break;
+                    case "T":
+                        score[index] = (int) Math.pow(score[index], 3);
+                        break;
+                    case "*":
+                        if (index > 0) {
+                            score[index - 1] = score[index - 1] * 2;
+                        }
+                        score[index] = score[index] * 2;
+                        break;
+                    case "#":
+                        score[index] = -score[index];
+                        break;
+                }
+            }
+        }
+
+        for (int i = 0; i < score.length; i++) {
+            result += score[i];
+        }
+
+        return result;
     }
 }
