@@ -55,33 +55,36 @@ public class Main {
 
 class Solution {
     public int solution(String s) {
-        int result = s.length();
-        String temp = "";
-        int count = 0;
+        StringBuilder result = new StringBuilder();
+        int min = s.length();
 
         for (int i = 1; i <= s.length() / 2; i++) {
-            String prevStr = s.substring(0, i);
-            for (int j = 0; j < s.length(); j += i) {
-                String nextStr = s.substring(j, j + i < s.length() ? j + i : s.length());
-                if (prevStr.equals(nextStr)) {
-                    count++;
-                } else {
+            String temp = s;
+            int count = 0;
+            for (int j = 0; j <= s.length() - i; j += i) {
+                String key = s.substring(j, j + i);
+
+                if (!temp.startsWith(key)) {
                     if (count > 1) {
-                        temp += count;
-                        temp += prevStr;
-                    } else {
-                        temp += nextStr;
+                        result.append(count);
+                        j += (count * i) - i;
                     }
-                    prevStr = nextStr;
+                    result.append(key);
                     count = 0;
+                } else {
+                    count++;
+                    temp = temp.substring(i);
+                    j -= i;
                 }
             }
-            if (result > temp.length()) {
-                result = temp.length();
+            result.append(temp);
+
+            if (min > result.length()) {
+                min = result.length();
             }
-            temp = "";
+            result = new StringBuilder();
         }
 
-        return result;
+        return min;
     }
 }
