@@ -16,7 +16,6 @@ import org.junit.runner.RunWith;
  */
 
 @RunWith(DataProviderRunner.class)
-
 public class Main {
     @DataProvider
     public static Object[][] resultData() {
